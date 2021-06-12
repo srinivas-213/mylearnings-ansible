@@ -1,0 +1,37 @@
+Configuration Management:-
+--------------------------
+This is a process of configuring remote servers from one point of control
+
+Advantages:-
+-------------
+Provisioning of Servers:-
+------------------------
+Installations of different softwares on a server or upgradation of existing softwares or deleting of
+softwares can be done very easily from one point of control.
+
+Creation of Replica Environments:-
+-----------------------------------
+configurartion managements tools have the capability of capturing the setup information of the remote 
+servers.this setup information can be used for creating similar environments in a different datacentre.
+
+Idempotent:-
+-------------
+configuration management tools are used to bring the servers to a particular state which is called as
+a desired state. if a remote server is already in the desired state then configuration management tools
+will not reconfigure that server.
+
+Handling Snowflake Servers:-
+------------------------------
+over a period of time each server present in a data centre will behave like a snowflake.i.e it might 
+have slightly different hardware and software configurations.configuration management tools can 
+capture that information using which we can create similar environments.
+
+Ansible:-
+---------
+ansible is a open source configuration managment tool created using python.the main machine where 
+ansible is installed is called as controller.the remote servers that we tried to configure are called
+as managed nodes or managed hosts.ansible uses agentless policy i.e there is no necessity for 
+installing any software on the managed nodes.only passwordless ssh should be installed between 
+controller and managed nodes.
+ansible performs a necessary configurations using push protocol.i.e it is simply pushes the necessary
+config changes through passwordless ssh.
